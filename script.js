@@ -10,18 +10,16 @@ playerImage.src = "shadow_dog.png"
 const spriteWidth = 575
 const spriteHeight = 523
 let frameX = 0
-let frameY = 0
+let frameY = 8
 let gameFrame = 0
 const staggerFrames = 5
 
 function animate(){
     ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT)
-    //ctx.drawImage(image, sx,sy,sw,sh, dx,dy,dw,dh
-    ctx.drawImage(playerImage, frameX*spriteWidth, frameY*spriteHeight, spriteWidth, spriteHeight, 0, 0, CANVAS_WIDTH-(25/2),CANVAS_HEIGHT-(77/2))
-    if (gameFrame % staggerFrames == 0){
-        if (frameX < 6) frameX++
-        else frameX = 0
-    }
+    position = Math.floor(gameFrame/staggerFrames) % 10
+    frameX = spriteWidth * position
+    ctx.drawImage(playerImage, frameX, frameY*spriteHeight, spriteWidth, spriteHeight, 0, 0, CANVAS_WIDTH-(25/2),CANVAS_HEIGHT-(77/2))
+
 
     gameFrame++
     requestAnimationFrame(animate)
