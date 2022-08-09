@@ -3,7 +3,7 @@ const canvas = document.getElementById('canvas1'); //pointing towards the elemen
 const ctx = canvas.getContext("2d");  // method to point towards the propertirs of current canvas object we are working on
 //console.log(canvas)
 
-<<<<<<< Updated upstream
+
 const playerImage = new Image()
 playerImage.src = "shadow_dog.png"
 const spriteWidth = 575
@@ -19,7 +19,6 @@ function animate(){
     frameX = spriteWidth * position
     ctx.drawImage(playerImage, frameX, frameY*spriteHeight, spriteWidth, spriteHeight, 0, 0, CANVAS_WIDTH-(25/2),CANVAS_HEIGHT-(77/2))
 
-=======
 const CANVAS_WIDTH = canvas.width = 300// for now canvas width
 const CANVAS_HEIGHT = canvas.height = 300// for now canvas height
 
@@ -40,7 +39,6 @@ function animate(){
         if (frameX < 6) frameX++    // to always change to the next image
         else frameX = 0  // repeat the animation from start
     }
->>>>>>> Stashed changes
 
     gameFrame++   // next frame count for another eteration
     requestAnimationFrame(animate)  // runs the function animate once every iteration so animaton begins
